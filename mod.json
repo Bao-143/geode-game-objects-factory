@@ -7,7 +7,7 @@
 		"ios": "2.2081"
 	},
 	"early-load": true,
-	"version": "1.8.0",
+	"version": "1.9.0",
 	"id": "roadhogstudios.game-objects-factory",
 	"name": "Game Objects Factory",
 	"developers": [ "lil2kki", "Arrhythmiagamer23" ],
