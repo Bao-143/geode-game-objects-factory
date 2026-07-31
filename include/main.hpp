@@ -596,6 +596,32 @@ namespace GameObjectsFactory {
     }
 
     /**
+     * Helper function to create a configuration for collectible object
+     *
+     * @param objectID - Your custom object ID
+     * @param spriteFrame - Sprite frame for the object
+     * @param setup - Function called on setup
+     * @param refObjectID - Refer obj
+     */
+    inline GameObjectConfig* createCollectibleConfig(
+        int objectID,
+        const std::string& spriteFrame = "",
+        std::function<void(GameObject*)> setup = nullptr,
+        int refObjectID = 4539
+    ) {
+        auto cllbk = [=](GameObject* obj) mutable {
+            if (auto a = obj->getChildByType<cocos2d::CCSprite>(0)) a->initWithSpriteFrameName(
+                spriteFrame.c_str()
+            );
+            if (setup) setup(obj);
+            };
+        auto config = createObjectConfig(objectID, "", cllbk, refObjectID);
+        config->m_createTabBar = 9;
+        config->m_tabBarInsertIndex = 150;
+        return config;
+    }
+
+    /**
      * Helper function to create a configuration for object with rotation
      *
      * @param objectID - Your custom object ID
