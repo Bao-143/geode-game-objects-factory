@@ -1,5 +1,5 @@
 {
-	"geode": "5.8.2",
+	"geode": "5.10.1",
 	"gd": {
 		"win": "2.2081",
 		"android": "2.2081",
@@ -8,15 +8,13 @@
 	},
 	"early-load": true,
 	"version": "1.9.0",
-	"id": "roadhogstudios.game-objects-factory",
+	"id": "bao143.game-objects-factory",
 	"name": "Game Objects Factory",
-	"developers": [ "lil2kki", "Arrhythmiagamer23" ],
+	"developers": [ "lil2kki", "Arrhythmiagamer23", "Bao143" ],
 	"description": "The custom game objects thing for devs.",
 	"tags": [ "developer", "editor", "utility", "api" ],
 	"links": {
-		"community": "https://discord.gg/6SxAbk3bTA",
-		"homepage": "https://t.me/lil2kki_channel",
-		"source": "https://github.com/Arrhythmiagamer23/geode-game-objects-factory"
+		"source": "https://github.com/Bao-143/geode-game-objects-factory"
 	},
 	"api": {
 		"include": [
