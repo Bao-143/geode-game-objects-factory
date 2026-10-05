@@ -516,7 +516,7 @@ namespace GameObjectsFactory {
         std::function<void(EnhancedGameObject*, PlayerObject*)> activatedByPlayer = nullptr,
         std::function<void(GameObject*)> setupCallback = nullptr,
         const std::string& spriteFrameDetail = "emptyGlow.png",
-        int refObjectID = 67
+        int refObjectID = 1330
     ) {
         auto cllbk = [=](GameObject* obj) mutable {
             if (spriteFrameDetail.size()) if (auto a = obj->m_colorSprite) a->initWithSpriteFrameName(
