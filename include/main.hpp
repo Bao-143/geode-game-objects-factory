@@ -499,6 +499,39 @@ namespace GameObjectsFactory {
         return config;
     }
 
+
+    /**
+     * Helper function to create a configuration for custom pad
+     *
+     * @param objectID - Your custom object ID
+     * @param spriteFrame - Sprite frame for the object
+     * @param setupCallback - Function called on setup
+     * @param activatedByPlayer - Function called when activates
+     * @param spriteFrameDetail - Detail frame (only if refer id is 1594!)
+     * @param refObjectID - Refer obj
+     */
+    inline GameObjectConfig* createDropPadConfig(
+        int objectID,
+        const std::string& spriteFrame = "",
+        std::function<void(EnhancedGameObject*, PlayerObject*)> activatedByPlayer = nullptr,
+        std::function<void(GameObject*)> setupCallback = nullptr,
+        const std::string& spriteFrameDetail = "emptyGlow.png",
+        int refObjectID = 67
+    ) {
+        auto cllbk = [=](GameObject* obj) mutable {
+            if (spriteFrameDetail.size()) if (auto a = obj->m_colorSprite) a->initWithSpriteFrameName(
+                spriteFrameDetail.c_str()
+            );
+
+            if (setupCallback) setupCallback(obj);
+            };
+        auto config = createObjectConfig(objectID, spriteFrame, cllbk, refObjectID);
+        config->m_createTabBar = 5; //portal-tab
+        config->m_tabBarInsertIndex = 4;
+        config->m_activatedByPlayer = activatedByPlayer;
+        return config;
+    }
+
      /**
      * Helper function to create a configuration for custom speed portal
      *
